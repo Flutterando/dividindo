@@ -1,7 +1,13 @@
+
 import 'package:dividindo/app/modules/home/pages/new_event/new_event_module.dart';
 import 'package:dividindo/app/shared/utils/color_app.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
+import 'package:dividindo/app/modules/login/login_module.dart';
+import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
 
 class HomePage extends StatefulWidget {
   @override
@@ -52,6 +58,20 @@ class _HomePageState extends State<HomePage> {
             },
           )
         ],
+        leading: IconButton(
+          icon: Icon(
+            Icons.power_settings_new,
+            color: Colors.redAccent,
+          ),
+          onPressed: () async {
+            var sharedPreferences = await SharedPreferences.getInstance();
+            await sharedPreferences.remove("userModel");
+            Navigator.of(context)
+                .pushReplacement(MaterialPageRoute(builder: (_) {
+              return LoginModule();
+            }));
+          },
+        ),
       ),
       body: Column(
         children: <Widget>[],

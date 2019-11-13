@@ -5,7 +5,7 @@ import 'package:dividindo/app/app_controller.dart';
 import 'package:dividindo/app/app_module.dart';
 
 void main() {
-  initModule(AppModule());
+  initModule(AppModule(null));
   AppController app;
 
   setUp(() {

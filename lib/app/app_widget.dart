@@ -1,5 +1,6 @@
 import 'package:dividindo/app/modules/home/home_module.dart';
 import 'package:flutter/material.dart';
+import 'modules/start/start_module.dart';
 
 class AppWidget extends StatelessWidget {
   @override
@@ -15,7 +16,6 @@ class AppWidget extends StatelessWidget {
         '/': (context) => HomeModule(), 
         '/home': (context) => HomeModule(), 
       },
-    //  home: LoginModule(),
     );
   }
 }

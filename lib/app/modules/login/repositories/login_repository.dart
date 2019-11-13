@@ -10,7 +10,7 @@ class LoginRepository extends Disposable {
   @override
   void dispose() {}
 
-  Future<bool> efetuarLogin(String email, String password) async {
+  Future<UserModel> efetuarLogin(String email, String password) async {
     try {
       var response = await hasuraConnect.query(
           '''query signin(\$email:String!, \$password:String!){
@@ -23,9 +23,8 @@ class LoginRepository extends Disposable {
                           }''',
           variables: {"email": email, "password": password});
 
-      UserModel model = UserModel.fromJson(response["data"]["users"][0]);
+      return UserModel.fromJson(response["data"]["users"][0]);
 
-      return model.id != null;
     } catch (e) {
       rethrow;
     }
