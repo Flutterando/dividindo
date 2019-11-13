@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'modules/login/login_module.dart';
+import 'modules/start/start_module.dart';
 
 class AppWidget extends StatelessWidget {
   @override
@@ -10,7 +9,7 @@ class AppWidget extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: LoginModule(),
+      home: StartModule(),
     );
   }
 }

@@ -21,6 +21,7 @@ class UserModel {
     'email': this.email,
     'created_at': this.createdAt,
   };
+  
   @override
   String toString() => '$toJson';
 }
