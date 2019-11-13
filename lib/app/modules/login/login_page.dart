@@ -70,7 +70,7 @@ class _LoginPageState extends State<LoginPage> {
 
                     if (login) {
                       Navigator.of(context)
-                          .push(MaterialPageRoute(builder: (_) {
+                          .pushReplacement(MaterialPageRoute(builder: (_) {
                         return HomeModule();
                       }));
                     } else {
