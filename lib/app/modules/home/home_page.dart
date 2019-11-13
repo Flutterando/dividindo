@@ -1,5 +1,4 @@
-import 'package:dividindo/app/modules/home/pages/new_event/new_event_module.dart';
-import 'package:dividindo/app/modules/login/login_module.dart';
+import 'package:dividindo/app/modules/evento/pages/new_event/new_event_module.dart';
 import 'package:dividindo/app/shared/utils/color_app.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -51,11 +50,14 @@ class _HomePageState extends State<HomePage> {
                 onSelected: (data) async {
                   switch (data) {
                     case 0:
-                      Navigator.of(context).push(PageRouteBuilder(
+                      Navigator.of(context).push(
+                        PageRouteBuilder(
                           opaque: false,
                           barrierDismissible: true,
                           pageBuilder: (BuildContext context, _, __) =>
-                              NewEventModule()));
+                              NewEventModule(),
+                        ),
+                      );
                       break;
                     case 1:
                       Navigator.of(context).pushNamed("evento");

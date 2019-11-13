@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:dividindo/app/modules/home/pages/new_event/repositories/new_event_repository.dart';
+import 'package:dividindo/app/modules/evento/pages/new_event/repositories/new_event_repository.dart';
 import 'package:dividindo/app/shared/models/user_model.dart';
 import 'package:flutter/material.dart';
 import 'package:mobx/mobx.dart';
