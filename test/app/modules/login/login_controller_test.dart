@@ -17,10 +17,10 @@ void main() {
       expect(login, isInstanceOf<LoginController>());
     });
 
-    test("Set Value", () {
-      expect(login.value, equals(0));
-      login.increment();
-      expect(login.value, equals(1));
-    });
+    // test("Set Value", () {
+    //   expect(login.value, equals(0));
+    //   login.increment();
+    //   expect(login.value, equals(1));
+    // });
   });
 }

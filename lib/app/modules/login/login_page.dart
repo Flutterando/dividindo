@@ -1,3 +1,4 @@
+import 'package:dividindo/app/modules/home/home_module.dart';
 import 'package:dividindo/app/modules/login/login_module.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
@@ -18,56 +19,87 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Column(
-        children: <Widget>[
-          FlutterLogo(),
-          Observer(
-            builder: (_) => TextField(
-              decoration: InputDecoration(
-                labelText: "Email:",
-                errorText: controller.passworError,
-              ),
-              controller: controller.emailController,
-            ),
-          ),
-          Observer(
-            builder: (_) => TextField(
-              obscureText: true,
-              decoration: InputDecoration(
-                labelText: "Senha:",
-                errorText: controller.emailError,
-              ),
-              controller: controller.passwordController,
-            ),
-          ),
-          RaisedButton(
-            onPressed: () async {
-              var login = await controller.login();
+      body: SingleChildScrollView(
+        child: SafeArea(
+          child: Container(
+            decoration: BoxDecoration(
+                border:
+                    Border.all(width: 2, color: Theme.of(context).accentColor)),
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height - 30,
+            padding: EdgeInsets.all(30),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: <Widget>[
+                SizedBox(
+                  height: 40,
+                ),
+                FlutterLogo(
+                  size: 100,
+                  colors: Colors.amber,
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Observer(
+                  builder: (_) => TextField(
+                    decoration: InputDecoration(
+                      labelText: "Email:",
+                      // errorText: controller.passworError,
+                    ),
+                    controller: controller.emailController,
+                  ),
+                ),
+                Observer(
+                  builder: (_) => TextField(
+                    obscureText: true,
+                    decoration: InputDecoration(
+                      labelText: "Senha:",
+                      // errorText: controller.emailError,
+                    ),
+                    controller: controller.passwordController,
+                  ),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                RaisedButton(
+                  onPressed: () async {
+                    var login = await controller.login();
 
-              if (login) {
-                await showDialog(
-                    context: context,
-                    builder: (_) {
-                      return AlertDialog(
-                        title: Text("Sucesso"),
+                    if (login) {
+                      Navigator.of(context)
+                          .push(MaterialPageRoute(builder: (_) {
+                        return HomeModule();
+                      }));
+                    } else {
+                      await showDialog(
+                        context: context,
+                        builder: (_) {
+                          return AlertDialog(
+                            title: Text("Login ou senha inválida"),
+                          );
+                        },
                       );
-                    });
-              } else {
-                await showDialog(
-                    context: context,
-                    builder: (_) {
-                      return AlertDialog(
-                        title: Text("Fail"),
-                      );
-                    });
-              }
-            },
-            child: Text("Login"),
-          )
-        ],
+                    }
+                  },
+                  child: Text("Login"),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Text(
+                  "Versão 1.0",
+                  style: TextStyle(
+                      color: Colors.black.withOpacity(.2),
+                      fontSize: 16,
+                      fontWeight: FontWeight.w400),
+                ),
+              ],
+            ),
+          ),
+        ),
       ),
     );
   }

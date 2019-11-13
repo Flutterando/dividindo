@@ -21,11 +21,14 @@ abstract class _LoginBase with Store {
 
   @action
   Future<bool> login() async {
-    bool valido = await _loginRepository.efetuarLogin(
-        emailController.text, passwordController.text);
+    try {
+      bool valido = await _loginRepository.efetuarLogin(
+          emailController.text, passwordController.text);
 
-    emailError = "Deu no email";
-    passworError = "Deu na Senha";
-    return valido;
+      return valido;
+    } catch (e) {
+      passwordController.text = "";
+      return false;
+    }
   }
 }

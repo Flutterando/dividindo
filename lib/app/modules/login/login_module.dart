@@ -1,3 +1,4 @@
+import 'package:dividindo/app/app_module.dart';
 import 'package:dividindo/app/modules/login/repositories/login_repository.dart';
 import 'package:dividindo/app/modules/login/login_controller.dart';
 import 'package:bloc_pattern/bloc_pattern.dart';
@@ -12,7 +13,7 @@ class LoginModule extends ModuleWidget {
 
   @override
   List<Dependency> get dependencies => [
-        Dependency((i) => LoginRepository()),
+        Dependency((i) => LoginRepository(AppModule.to.get())),
       ];
 
   @override
