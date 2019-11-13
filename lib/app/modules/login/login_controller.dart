@@ -23,7 +23,9 @@ abstract class _LoginBase with Store {
   Future<bool> login() async {
     try {
       bool valido = await _loginRepository.efetuarLogin(
-          emailController.text, passwordController.text);
+        emailController.text,
+        passwordController.text,
+      );
 
       return valido;
     } catch (e) {
