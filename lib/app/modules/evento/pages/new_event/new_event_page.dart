@@ -1,8 +1,8 @@
-import 'package:dividindo/app/modules/home/pages/new_event/new_event_module.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 
 import 'new_event_controller.dart';
+import 'new_event_module.dart';
 
 class NewEventPage extends StatefulWidget {
   final String title;

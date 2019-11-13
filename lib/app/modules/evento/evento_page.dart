@@ -1,10 +1,10 @@
-import 'package:dividindo/app/modules/home/pages/new_event/new_event_module.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'evento_controller.dart';
 import 'evento_module.dart';
+import 'pages/new_event/new_event_module.dart';
 
 class EventoPage extends StatefulWidget {
   final String title;
