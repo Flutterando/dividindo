@@ -9,32 +9,44 @@ part of 'login_controller.dart';
 // ignore_for_file: non_constant_identifier_names, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
 
 mixin _$LoginController on _LoginBase, Store {
-  final _$valueAtom = Atom(name: '_LoginBase.value');
+  final _$emailErrorAtom = Atom(name: '_LoginBase.emailError');
 
   @override
-  int get value {
-    _$valueAtom.context.enforceReadPolicy(_$valueAtom);
-    _$valueAtom.reportObserved();
-    return super.value;
+  String get emailError {
+    _$emailErrorAtom.context.enforceReadPolicy(_$emailErrorAtom);
+    _$emailErrorAtom.reportObserved();
+    return super.emailError;
   }
 
   @override
-  set value(int value) {
-    _$valueAtom.context.conditionallyRunInAction(() {
-      super.value = value;
-      _$valueAtom.reportChanged();
-    }, _$valueAtom, name: '${_$valueAtom.name}_set');
+  set emailError(String value) {
+    _$emailErrorAtom.context.conditionallyRunInAction(() {
+      super.emailError = value;
+      _$emailErrorAtom.reportChanged();
+    }, _$emailErrorAtom, name: '${_$emailErrorAtom.name}_set');
   }
 
-  final _$_LoginBaseActionController = ActionController(name: '_LoginBase');
+  final _$passworErrorAtom = Atom(name: '_LoginBase.passworError');
 
   @override
-  void login() {
-    final _$actionInfo = _$_LoginBaseActionController.startAction();
-    try {
-      return super.login();
-    } finally {
-      _$_LoginBaseActionController.endAction(_$actionInfo);
-    }
+  String get passworError {
+    _$passworErrorAtom.context.enforceReadPolicy(_$passworErrorAtom);
+    _$passworErrorAtom.reportObserved();
+    return super.passworError;
+  }
+
+  @override
+  set passworError(String value) {
+    _$passworErrorAtom.context.conditionallyRunInAction(() {
+      super.passworError = value;
+      _$passworErrorAtom.reportChanged();
+    }, _$passworErrorAtom, name: '${_$passworErrorAtom.name}_set');
+  }
+
+  final _$loginAsyncAction = AsyncAction('login');
+
+  @override
+  Future<bool> login() {
+    return _$loginAsyncAction.run(() => super.login());
   }
 }

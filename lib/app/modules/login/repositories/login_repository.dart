@@ -2,13 +2,12 @@ import 'package:bloc_pattern/bloc_pattern.dart';
 import 'package:dio/dio.dart';
 
 class LoginRepository extends Disposable {
-  Future fetchPost(Dio client) async {
-    final response =
-        await client.get('https://jsonplaceholder.typicode.com/posts/1');
-    return response.data;
-  }
-
-  //dispose will be called automatically
   @override
   void dispose() {}
+
+  Future<bool> efetuarLogin(String email, String senha) async {
+    return email == senha;
+  }
 }
+
+//https://flutterando-dividindo.herokuapp.com/v1/graphql

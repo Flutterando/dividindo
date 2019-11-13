@@ -1,3 +1,4 @@
+import 'package:dio/dio.dart';
 import 'package:dividindo/app/app_controller.dart';
 import 'package:bloc_pattern/bloc_pattern.dart';
 import 'package:flutter/material.dart';
@@ -10,7 +11,9 @@ class AppModule extends ModuleWidget {
       ];
 
   @override
-  List<Dependency> get dependencies => [];
+  List<Dependency> get dependencies => [
+        Dependency((i) => Dio()),
+      ];
 
   @override
   Widget get view => AppWidget();

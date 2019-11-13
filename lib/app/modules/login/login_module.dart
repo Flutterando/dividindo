@@ -7,7 +7,7 @@ import 'package:dividindo/app/modules/login/login_page.dart';
 class LoginModule extends ModuleWidget {
   @override
   List<Bloc> get blocs => [
-        Bloc((i) => LoginController()),
+        Bloc((i) => LoginController(i.get())),
       ];
 
   @override
