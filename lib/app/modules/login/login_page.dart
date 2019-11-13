@@ -37,7 +37,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 FlutterLogo(
                   size: 100,
-                  colors: Colors.amber,
+                  colors: Colors.purple,
                 ),
                 SizedBox(
                   height: 20,
@@ -64,27 +64,29 @@ class _LoginPageState extends State<LoginPage> {
                 SizedBox(
                   height: 20,
                 ),
-                RaisedButton(
-                  onPressed: () async {
-                    var login = await controller.login();
+                Container(
+                  width: double.infinity,
+                  child: RaisedButton(
+                    onPressed: () async {
+                      var login = await controller.login();
 
-                    if (login) {
-                      Navigator.of(context)
-                          .pushReplacement(MaterialPageRoute(builder: (_) {
-                        return HomeModule();
-                      }));
-                    } else {
-                      await showDialog(
-                        context: context,
-                        builder: (_) {
-                          return AlertDialog(
-                            title: Text("Login ou senha inválida"),
-                          );
-                        },
-                      );
-                    }
-                  },
-                  child: Text("Login"),
+                      if (login) {
+                        Navigator.of(context).pushReplacementNamed("/home");
+                      } else {
+                        await showDialog(
+                          context: context,
+                          builder: (_) {
+                            return AlertDialog(
+                              title: Text("Login ou senha inválida"),
+                            );
+                          },
+                        );
+                      }
+                    },
+                    child: Text("Login",
+                        style: TextStyle(
+                            color: Theme.of(context).textTheme.button.color)),
+                  ),
                 ),
                 SizedBox(
                   height: 20,

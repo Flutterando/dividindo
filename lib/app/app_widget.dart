@@ -1,5 +1,6 @@
 import 'package:dividindo/app/modules/home/home_module.dart';
 import 'package:flutter/material.dart';
+import 'modules/login/login_module.dart';
 import 'modules/start/start_module.dart';
 
 class AppWidget extends StatelessWidget {
@@ -9,12 +10,18 @@ class AppWidget extends StatelessWidget {
       title: 'Dividindo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.purple,
-      ),
+          primarySwatch: Colors.purple,
+          buttonTheme: ButtonThemeData(
+            buttonColor: Colors.purple,
+          ),
+          textTheme: TextTheme(
+            button: TextStyle(color: Colors.white),
+          )),
       initialRoute: '/',
       routes: {
-        '/': (context) => HomeModule(), 
-        '/home': (context) => HomeModule(), 
+        '/': (context) => StartModule(),
+        '/home': (context) => HomeModule(),
+        '/login': (context) => LoginModule(),
       },
     );
   }

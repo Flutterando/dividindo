@@ -1,7 +1,7 @@
-import 'package:dividindo/app/app_controller.dart';
 import 'package:bloc_pattern/bloc_pattern.dart';
-import 'package:flutter/material.dart';
+import 'package:dividindo/app/app_controller.dart';
 import 'package:dividindo/app/app_widget.dart';
+import 'package:flutter/material.dart';
 import 'package:hasura_connect/hasura_connect.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
