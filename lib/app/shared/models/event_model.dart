@@ -20,6 +20,11 @@ class EventModel {
     'created_at': this.createdAt,
   };
 
+  static List<EventModel> fromJsonList(List list) {
+    if (list == null) return null;
+    return list.map<EventModel>((item) => EventModel.fromJson(item)).toList();
+  }
+
     @override
   String toString() => '$toJson';
 }

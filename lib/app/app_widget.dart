@@ -1,7 +1,6 @@
-import 'package:dividindo/app/modules/home/home_module.dart';
 import 'package:flutter/material.dart';
-import 'modules/login/login_module.dart';
-import 'modules/start/start_module.dart';
+import '../routes.dart';
+import 'shared/utils/color_app.dart';
 
 class AppWidget extends StatelessWidget {
   @override
@@ -10,19 +9,16 @@ class AppWidget extends StatelessWidget {
       title: 'Dividindo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-          primarySwatch: Colors.purple,
+          accentColor: Colors.indigo,
+          primaryColor: ColorApp.C6F3980,
           buttonTheme: ButtonThemeData(
             buttonColor: Colors.purple,
           ),
           textTheme: TextTheme(
             button: TextStyle(color: Colors.white),
           )),
-      initialRoute: '/',
-      routes: {
-        '/': (context) => StartModule(),
-        '/home': (context) => HomeModule(),
-        '/login': (context) => LoginModule(),
-      },
+      initialRoute: "/",
+      onGenerateRoute: generateRoute,
     );
   }
 }
