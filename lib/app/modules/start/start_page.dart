@@ -17,9 +17,9 @@ class _StartPageState extends State<StartPage> {
     //Esse timer é necessario para não dar erro ao redirecionar para proxima pagina sem ter carregado essa antes
     await Future.delayed(Duration(milliseconds: 500));
     if (startBloc.isLogged()) {
-      Navigator.pushNamed(context, "/home");
+      Navigator.pushReplacementNamed(context, "home");
     } else {
-      Navigator.pushNamed(context, "/login");
+      Navigator.pushReplacementNamed(context, "login");
     }
   }
 

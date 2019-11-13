@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:dividindo/app/shared/models/event_model.dart';
+import 'package:dividindo/app/shared/models/user_model.dart';
 import 'package:mobx/mobx.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -22,7 +23,7 @@ abstract class _StartBase with Store {
         return false;
       }
 
-      EventModel model = EventModel.fromJson(json.decode(jsonvar));
+      UserModel model = UserModel.fromJson(json.decode(jsonvar));
 
       if (model?.id != null) {
         return true;

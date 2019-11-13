@@ -71,7 +71,7 @@ class _LoginPageState extends State<LoginPage> {
                       var login = await controller.login();
 
                       if (login) {
-                        Navigator.of(context).pushReplacementNamed("/home");
+                        Navigator.of(context).pushReplacementNamed("home");
                       } else {
                         await showDialog(
                           context: context,
