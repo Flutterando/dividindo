@@ -1,16 +1,8 @@
 # dividindo
 
-A new Flutter project.
+Projeto novo =D
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Projeto com o objetivo de dividir as despesas de um Evento, na nossa ultima viagem tivemos o problema para contabilizar o que cada um gastou e no final acabou que eu (Bwolf) tive que calcular tudo na mão, entao tivemos a ideia de criar esse aplicativo para controlar isso.
+E que venham mais viagems =D
