@@ -17,7 +17,8 @@ class AppModule extends ModuleWidget {
 
   @override
   List<Dependency> get dependencies => [
-        Dependency<HasuraConnect>((i) => HasuraConnect("https://flutterando-dividindo.herokuapp.com/v1/graphql")),
+        Dependency<HasuraConnect>((i) => HasuraConnect(
+            "https://flutterando-dividindo.herokuapp.com/v1/graphql")),
         Dependency<SharedPreferences>((i) => sharedPreferences),
       ];
 

@@ -17,10 +17,5 @@ void main() {
       expect(adddebt, isInstanceOf<AddDebtController>());
     });
 
-    test("Set Value", () {
-      expect(adddebt.value, equals(0));
-      adddebt.increment();
-      expect(adddebt.value, equals(1));
-    });
   });
 }

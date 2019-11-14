@@ -1,7 +1,6 @@
 import 'package:bloc_pattern/bloc_pattern.dart';
 import 'package:dividindo/app/shared/models/event_model_user_dto.dart';
 import 'package:dividindo/app/shared/models/user_debts_model.dart';
-import 'package:dividindo/app/shared/models/user_model.dart';
 import 'package:hasura_connect/hasura_connect.dart';
 
 class AddDebtRepository extends Disposable {
