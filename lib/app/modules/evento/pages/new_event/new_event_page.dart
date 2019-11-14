@@ -34,6 +34,9 @@ class _NewEventPageState extends State<NewEventPage> {
                 ),
                 controller: controller.nameController,
               ),
+                 SizedBox(
+                height: 20,
+              ),
               Observer(
                 builder: (_) {
                   return GestureDetector(
@@ -58,7 +61,11 @@ class _NewEventPageState extends State<NewEventPage> {
                       width: controller.isLoadind ? 40 : 400,
                       child: controller.isLoadind
                           ? SizedBox(
-                              child: CircularProgressIndicator(strokeWidth: 2, valueColor: new AlwaysStoppedAnimation<Color>(Colors.white),),
+                              child: CircularProgressIndicator(
+                                strokeWidth: 2,
+                                valueColor: new AlwaysStoppedAnimation<Color>(
+                                    Colors.white),
+                              ),
                               height: 20,
                               width: 20,
                             )
@@ -72,6 +79,23 @@ class _NewEventPageState extends State<NewEventPage> {
                     ),
                   );
                 },
+              ),
+           
+              Container(
+                margin: EdgeInsets.only(top: 10),
+                padding: EdgeInsets.all(10),
+                width: 400,
+                child: FlatButton(
+                  child: Text(
+                    "Fechar",
+                    style: TextStyle(
+                      color: Theme.of(context).accentColor,
+                    ),
+                  ),
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                ),
               )
             ],
           ),

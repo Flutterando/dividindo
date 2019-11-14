@@ -25,6 +25,12 @@ class EventModel {
     return list.map<EventModel>((item) => EventModel.fromJson(item)).toList();
   }
 
-    @override
-  String toString() => '$toJson';
+  @override
+  String toString() => name;
+
+  @override
+  operator ==(o) => o is EventModel && o.id == id;
+
+  @override
+  int get hashCode => id.hashCode^name.hashCode^createdAt.hashCode;
 }

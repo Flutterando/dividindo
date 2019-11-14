@@ -24,7 +24,7 @@ class UserDebtsModel {
     idEventUser = json['id_event_user'];
     name = json['name'];
     paidOut = json['paid_out'];
-    value = json['value'];
+    value = json['value']?.toDouble();
     createdAt = json['created_at'];
     eventUser = (json['event_user'] != null)
         ? EventUserModel.fromJson(json['event_user'])
@@ -41,6 +41,13 @@ class UserDebtsModel {
         'created_at': this.createdAt,
         'event_user': this.eventUser.toJson,
       };
+
+  static List<UserDebtsModel> fromJsonList(List list) {
+    if (list == null) return null;
+    return list
+        .map<UserDebtsModel>((item) => UserDebtsModel.fromJson(item))
+        .toList();
+  }
 
   @override
   String toString() => '$toJson';

@@ -1,5 +1,6 @@
 import 'package:bloc_pattern/bloc_pattern.dart';
 import 'package:dividindo/app/shared/models/event_model.dart';
+import 'package:dividindo/app/shared/models/event_user_model.dart';
 import 'package:hasura_connect/hasura_connect.dart';
 
 class EventoRepository extends Disposable {
@@ -56,6 +57,8 @@ class EventoRepository extends Disposable {
       return false;
     }
   }
+
+  
 
   //dispose will be called automatically
   @override

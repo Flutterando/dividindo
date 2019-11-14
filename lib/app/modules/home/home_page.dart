@@ -87,7 +87,9 @@ class _HomePageState extends State<HomePage> {
         ),
         floatingActionButton: FloatingActionButton(
           backgroundColor: Theme.of(context).accentColor,
-          onPressed: () {},
+          onPressed: () {
+            Navigator.of(context).pushNamed("debt");
+          },
           child: Icon(Icons.attach_money),
         ));
   }
