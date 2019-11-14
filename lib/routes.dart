@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'app/modules/debt/debt_module.dart';
 import 'app/modules/evento/evento_module.dart';
 import 'app/modules/home/home_module.dart';
 import 'app/modules/login/login_module.dart';
@@ -23,6 +24,11 @@ Route<dynamic> generateRoute(RouteSettings settings) {
       return MaterialPageRoute(
         builder: (_) => EventoModule(),
       );
+    case 'debt':
+      return MaterialPageRoute(
+        builder: (_) => DebtModule(),
+      );
+
     default:
       return MaterialPageRoute(
         builder: (_) => Scaffold(

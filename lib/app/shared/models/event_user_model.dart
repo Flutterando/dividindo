@@ -26,8 +26,8 @@ class EventUserModel {
         'id': this.id,
         'id_event': this.idEvent,
         'id_user': this.idUser,
-        'user': this.user.toJson,
-        'created_at': this.event.toJson,
+        'user': this.user?.toJson,
+        'created_at': this.event?.toJson,
       };
 
   @override

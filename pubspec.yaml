@@ -4,6 +4,7 @@ description: A new Flutter project.
 environment: 
   sdk: '>=2.5.0 <3.0.0'
 dependencies: 
+  find_dropdown: ^0.1.7+1
   font_awesome_flutter: ^8.5.0
 
   shared_preferences: ^0.5.4+5

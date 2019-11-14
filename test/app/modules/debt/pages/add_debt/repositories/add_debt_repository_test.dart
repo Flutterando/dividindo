@@ -2,22 +2,22 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:dio/dio.dart';
 
-import 'package:dividindo/app/modules/home/pages/new_event/repositories/new_event_repository.dart';
+import 'package:dividindo/app/modules/debt/pages/add_debt/repositories/add_debt_repository.dart';
 
 class MockClient extends Mock implements Dio {}
 
 void main() {
-  NewEventRepository repository;
+  AddDebtRepository repository;
   MockClient client;
 
   setUp(() {
-    repository = NewEventRepository();
+    repository = AddDebtRepository();
     client = MockClient();
   });
 
-  group('NewEventRepository Test', () {
+  group('AddDebtRepository Test', () {
     test("First Test", () {
-      expect(repository, isInstanceOf<NewEventRepository>());
+      expect(repository, isInstanceOf<AddDebtRepository>());
     });
 
     test('returns a Post if the http call completes successfully', () async {
